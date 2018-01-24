@@ -1,0 +1,46 @@
+{% load staticfiles %}
+{% load mptt_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Teana</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <!--<link rel="stylesheet" href="style/main.css">-->
+
+</head>
+<body>
+
+<div class="jumbotron"></div>
+<div class="container">
+	<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+
+            {% recursetree category %}
+            {% if node.is_leaf_node %}
+                <li><a href="#">{{ node.name }}</a></li>
+            {% else %}
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="/admin">
+                     {{ node }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">{{ children }}</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+            {% endrecursetree %}
+	        </ul>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
+</body>

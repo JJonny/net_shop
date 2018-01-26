@@ -3,11 +3,10 @@
 
 <div class="row">
     {% for item in products %}
-    <div clss="col-sd-4 col-md-3 col-sx-6">
+    <div class="col-sm-4 col-md-3 col-xs-6">
         <div class="thumbnail">
             <img src="{{ item.prod_image }}" height="300" width="300" alt="...">
-            <h4>{{ item.prod_name }}</h4>
-            <p>{{ item.prod_description }}</p>
+            <p >{{ item.prod_name }}</p>
             <div class="clearfix"></div>
         </div>
     </div>

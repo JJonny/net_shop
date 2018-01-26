@@ -10,13 +10,16 @@ body, html {
     font-size: 20px;
 }
 
-.jumbotron {
-    margin-bottom: 0px;
+.jumbotron-img {
+    margin-bottom: 20px;
     background-image: url(../header.jpg);
     background-position: center center;
-    background-size: cover;
     background-repeat: no-repeat;
-    height: 300px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    height: 200px;
 }
 
 
@@ -73,11 +76,21 @@ body, html {
 
 }
 
-.thumbnail {
+.thumbnail {/*
+    width: 250px;*/
+    height: 250px;
     background-color: #c7e5d6;
     position: relative;
     padding: 0px;
     margin-bottom: 20px;
+}
+
+.thumbnail img {
+}
+
+.thumbnail p {
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 /*.thumbnail img {

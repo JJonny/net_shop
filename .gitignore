@@ -7,6 +7,6 @@ shop_system/__pycache__/
 
 *.pyc
 
-shop/static/
-
 \.idea/
+
+shop/static/images/

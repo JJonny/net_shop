@@ -2,11 +2,11 @@
 {% block content %}
 
 <div class="row">
-    {% for item in products %}
+    {% for tea in tea_list %}
     <div class="col-sm-4 col-md-3 col-xs-6">
         <div class="thumbnail">
-            <img src="{{ item.prod_image.url }}" height="300" width="300" alt="...">
-            <p >{{ item.prod_name }}</p>
+            <img src="{{ tea.prod_image.url }}" height="300" width="300" alt="...">
+            <p >{{ tea.prod_name }}</p>
             <div class="clearfix"></div>
         </div>
     </div>

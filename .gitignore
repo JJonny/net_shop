@@ -2,3 +2,11 @@
 shop_system/settings\.pyc
 
 shop_system/__init__\.pyc
+
+shop_system/__pycache__/
+
+*.pyc
+
+shop/static/
+
+\.idea/

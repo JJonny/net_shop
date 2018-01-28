@@ -24,13 +24,13 @@
 
             {% recursetree category %}
             {% if node.is_leaf_node %}
-                <li><a href="#">{{ node.name }}</a></li>
+                <li><a href="/{{ node.id }}/">{{ node.name }}</a></li>
             {% else %}
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="/admin">
                      {{ node }}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">{{ children }}</a></li>
+                        <li><a href="/{{ children.id }}/">{{ children }}</a></li>
                     </ul>
                 </li>
             {% endif %}

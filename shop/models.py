@@ -3,7 +3,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 import uuid
 from PIL import Image
 from django.conf import settings
-from django.db.models.signals import pre_delete
+from django.db.models.signals import pre_delete, pre_save
 from django.dispatch.dispatcher import receiver
 
 
@@ -59,7 +59,24 @@ class Product(models.Model):
 
 
 @receiver(pre_delete, sender=Product)
-def mymodel_delete(sender, instance, **kwargs):
+def Product_delete(sender, instance, **kwargs):
     # Pass false so FileField doesn't save the model.
     print('-----------===---EEeeyha----===--')
+    for key in kwargs:
+        print("keyword arg: %s: %s" % (key, kwargs[key]))
     instance.prod_image.delete(False)
+    
+
+@receiver(pre_save, sender=Product)
+def Product_save(sender, **kwargs):
+    for key in kwargs:
+        print("keyword arg: %s: %s" % (key, kwargs[key]))
+        
+    try:
+        obj = Product.objects.get(prod_name = kwargs['instance'])
+        if obj:
+            print('is exist')
+            obj.prod_image.delete(False)
+    except Exception as er:
+        print('Product_save: error:', er)
+        

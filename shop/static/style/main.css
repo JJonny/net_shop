@@ -8,6 +8,7 @@ body, html {
 * {
 	box-sizing: border-box;
     font-size: 20px;
+    color: #5F8F77;
 }
 
 .jumbotron-img {
@@ -29,20 +30,21 @@ body, html {
     color: #5F8F77;
 }
 
-.navbar-default .navbar-nav > li  a:hover,
-.navbar-default .navbar-nav > li  a:focus  {
+/*.navbar-default .navbar-nav > li  a:hover,*/
+.navbar-default .collapse > li  a:hover,
+.navbar-default .collapse > li  a:focus  {
     color: #5F8F77;
 }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .container-fluid .collapse > .active > a,
+.navbar-default .container-fluid .collapse > .active > a:hover,
+.navbar-default .container-fluid .collapse > .active > a:focus {
     color: #5F8F77;
 }
 
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .container-fluid .collapse > .open > a,
+.navbar-default .container-fluid .collapse > .open > a:hover,
+.navbar-default .container-fluid .collapse > .open > a:focus {
     background-color:  #fff;
     color: #5F8F77;
 }

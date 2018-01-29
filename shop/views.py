@@ -5,7 +5,7 @@ from .models import Product, Category
 def home(request):
     return render(request, "home.html",
                     {'category': Category.objects.all(),
-                     'products': Product.objects.all()})
+                     'products': Product.objects.all() })
 
 
 def tea_category(request, category_id):
@@ -14,3 +14,7 @@ def tea_category(request, category_id):
                                         'tea_list': tea_list})
 
 
+def tea_description(request, slug):
+    tea = get_object_or_404(Product, prod_slug=slug)
+    return render(request, "tea-description.html", {'category': Category.objects.all(),
+                                        'tea': tea})

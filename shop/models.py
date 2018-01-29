@@ -50,9 +50,9 @@ class Product(models.Model):
         verbose_name_plural = 'Продукты'
         verbose_name = 'Продукт'
 
-    @models.permalink
-    def get_absolute_url(self):
-        return ('shop', [self.prod_slug])
+    # @models.permalink
+    # def get_absolute_url(self):
+    #     return self.prod_slug
 
     def __str__(self):
         return self.prod_name

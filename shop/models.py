@@ -3,6 +3,8 @@ from mptt.models import MPTTModel, TreeForeignKey
 import uuid
 from PIL import Image
 from django.conf import settings
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
 
 
 def make_upload_path(instance, filename, prefix=False):
@@ -54,3 +56,10 @@ class Product(models.Model):
 
     def __str__(self):
         return self.prod_name
+
+
+@receiver(pre_delete, sender=Product)
+def mymodel_delete(sender, instance, **kwargs):
+    # Pass false so FileField doesn't save the model.
+    print('-----------===---EEeeyha----===--')
+    instance.prod_image.delete(False)

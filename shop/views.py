@@ -18,3 +18,10 @@ def tea_description(request, slug):
     tea = get_object_or_404(Product, prod_slug=slug)
     return render(request, "tea-description.html", {'category': Category.objects.all(),
                                         'tea': tea})
+                                        
+                                        
+def about(request):
+    return render(request, 'about.html', {'category': Category.objects.all()})
+                                        
+                                        
+                                        

@@ -25,10 +25,9 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                   </button>
               <a class="navbar-brand" href="/">Все чаи</a>
+              <a class="navbar-brand" href="/about">О нас</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -49,29 +48,6 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    
-    
-    
-	<!--<nav class="navbar navbar-default">-->
- <!--       <div class="container-fluid">-->
- <!--           <ul class="nav navbar-nav">-->
-
- <!--           {% recursetree category %}-->
- <!--           {% if node.is_leaf_node %}-->
- <!--               <li><a href="/{{ node.id }}/">{{ node.name }}</a></li>-->
- <!--           {% else %}-->
- <!--               <li class="dropdown">-->
- <!--                   <a class="dropdown-toggle" data-toggle="dropdown" href="/admin">-->
- <!--                    {{ node }}<span class="caret"></span></a>-->
- <!--                   <ul class="dropdown-menu">-->
- <!--                       <li><a href="/{{ children.id }}/">{{ children }}</a></li>-->
- <!--                   </ul>-->
- <!--               </li>-->
- <!--           {% endif %}-->
- <!--           {% endrecursetree %}-->
-	<!--        </ul>-->
- <!--       </div>-->
- <!--   </nav>-->
     {% block content %}
 
     {% endblock content %}

@@ -115,10 +115,7 @@ body, html {
     background-color: #c7e5d6;
     position: relative;
     padding: 0px;
-    margin-bottom: 20px;
-}
-
-.thumbnail img {
+    margin-bottom: 50px;
 }
 
 .thumbnail p {

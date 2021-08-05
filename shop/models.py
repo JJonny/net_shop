@@ -24,8 +24,10 @@ def make_upload_path(instance, filename, prefix=False):
 
 class Category(MPTTModel):
     name = models.CharField(max_length=50, unique=True, verbose_name='Название категории')
-    parent = TreeForeignKey('self', null=True, blank=True,
-                            related_name='children', verbose_name='Родитель')
+    # parent = TreeForeignKey('self', null=True, blank=True,
+                            # related_name='children', verbose_name='Родитель')
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, 
+        blank=True, related_name="cildren")
 
     def __str__(self):
         return self.name
@@ -42,8 +44,8 @@ class Product(models.Model):
     prod_name = models.CharField(max_length=100, verbose_name='Название продукта')
     prod_slug = models.SlugField(default='', unique=True, max_length=250)
     prod_description = models.TextField(verbose_name='Описание')
-    prod_category = TreeForeignKey(Category, null=True, blank=True,
-                            related_name='category', verbose_name='Категория')
+    prod_category = TreeForeignKey(Category, on_delete=models.CASCADE, null=True, 
+                            blank=True, related_name='category', verbose_name='Категория')
     prod_image = models.FileField(upload_to=make_upload_path, null=True)
 
     class Meta:

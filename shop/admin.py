@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Product, Category
 
+#teanaadmin 1234qwer
 
 class CategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'parent']

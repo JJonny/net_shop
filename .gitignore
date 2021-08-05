@@ -10,3 +10,4 @@ shop_system/__pycache__/
 \.idea/
 
 shop/static/images/
+env/
